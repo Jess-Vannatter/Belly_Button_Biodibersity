@@ -134,18 +134,22 @@ var filterMeta = metadataArray.filter(metaId => metaId.id == sample);
     mode: "markers",
     marker: {
         size: sampleValues,
-        color: otuIds
+        color: otuIds,
+        colorscale: "Earth"
     }
-  }
+  };
 
   var bubbleData = [trace2];
-// //     // Deliverable 2: 2. Create the layout for the bubble chart.
+ // Deliverable 2: 2. Create the layout for the bubble chart.
   var bubbleLayout = {
     title: "Bacteria Cultures Per Samples",
     xaxis: {
       title: {
-        text: 'OTU ID'}}
+        text: 'OTU ID'}},
+    margin: { t: 0 },
+        hovermode: "closest"
   };
+
 // //     // Deliverable 2: 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 // //     // Deliverable 3: 4. Create the trace for the gauge chart.
